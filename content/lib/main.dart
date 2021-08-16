@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:content/pages/home.dart';
+import 'package:content/pages/detail.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +17,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Container(color: Colors.white),
+      initialRoute: "/",
+      getPages: [
+        GetPage(
+          name: "/",
+          page: () => const Home(),
+        ),
+        GetPage(
+          name: "/detail",
+          page: () => const Detail(),
+        ),
+      ],
     );
   }
 }
